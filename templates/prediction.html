@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vegetable Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    
+    <nav>
+        <h2>GreenClassify</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/prediction">Predict</a>
+        </div>
+    </nav>
+
+    <!-- PREDICTION SECTION -->
+    <div class="prediction-container">
+        <h1>Upload Vegetable Image</h1>
+
+        <form action="{{ url_for('prediction') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if error %}
+            <p style="color:red; margin-top:20px;">{{ error }}</p>
+        {% endif %}
+
+        {% if pred %}
+            <h2>Prediction: {{ pred }}</h2>
+            <h3>Confidence: {{ confidence }}%</h3>
+            <img src="{{ image_path }}" width="300" style="margin-top:20px;">
+        {% endif %}
+    </div>
+
+</body>
+</html>
