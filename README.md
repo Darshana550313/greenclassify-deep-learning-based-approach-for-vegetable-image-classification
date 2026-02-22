@@ -1,0 +1,2 @@
+# greenclassify-deep-learning-based-approach-for-vegetable-image-classification
+GreenClassify is a Deep Learning based web application that identifies vegetables from images using a Convolutional Neural Network (CNN).  The user uploads a vegetable image, and the trained model predicts the vegetable name with high accuracy.  This project demonstrates practical implementation of Computer Vision and Deep Learning concepts.
